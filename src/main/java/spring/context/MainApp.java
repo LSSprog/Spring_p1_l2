@@ -1,9 +1,7 @@
 package spring.context;
 
-import javafx.scene.transform.Scale;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainApp {
@@ -11,18 +9,8 @@ public class MainApp {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigApp.class);
 
         ProductRepository productRepository = context.getBean("prodRep", ProductRepository.class);
-        //System.out.println(productRepository.getProductList());
-        //System.out.println(productRepository.getProductById(3));
 
         Cart cart = context.getBean("cart", Cart.class);
-        /*System.out.println(cart.showList());
-        cart.addProduct(1);
-        System.out.println(cart.showList());
-        cart.addProduct(3);
-        System.out.println(cart.showList());
-        cart.addProduct(4);
-        cart.deleteProduct(3);
-        System.out.println(cart.showList());*/
 
         // task3 - консольное приложение по управлению карзиной
         Scanner scanner = new Scanner(System.in);
